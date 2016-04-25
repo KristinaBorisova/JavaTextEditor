@@ -120,12 +120,12 @@ public class FullMenu extends DateDemo {
 		JMenuItem mntmNew = new JMenuItem("New");
 		mntmNew.setBackground(SystemColor.control);
 		mnFile.add(mntmNew);
-        mntmNew.addActionListener(new java.awt.event.ActionListener() {
-        	public void actionPerformed (java.awt.event.ActionEvent evt) {
-        		mntmNew(evt);
-        		textArea.setText(""); //New file function
-        	}
-        });
+		mntmNew.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				mntmNew(evt);
+				textArea.setText(""); // New file function
+			}
+		});
 		// private void actionListeners(){
 		// mntmNew.add.ActionListener(new Actionlistener() {
 		// public void actionPerformed(ActionEvent actionEvent) {
@@ -149,9 +149,8 @@ public class FullMenu extends DateDemo {
 		JMenu mnEdit = new JMenu("Edit"); // Edit menu
 		mnEdit.setFont(new Font("SansSerif", Font.PLAIN, 15));
 		menuBar.add(mnEdit);
-		// JTextArea textArea = new JTextArea(50, 10);
-		// add(textArea);
-		JMenuItem mntmCoppy = new JMenuItem("Coppy");
+
+		JMenuItem mntmCoppy = new JMenuItem("Coppy"); // Copy function
 		mnEdit.add(mntmCoppy);
 		mntmCoppy.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -160,7 +159,7 @@ public class FullMenu extends DateDemo {
 			}
 		});
 
-		JMenuItem mntmCut = new JMenuItem("Cut");
+		JMenuItem mntmCut = new JMenuItem("Cut"); // Cut function
 		mnEdit.add(mntmCut);
 		mntmCut.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -168,7 +167,7 @@ public class FullMenu extends DateDemo {
 			}
 		});
 
-		JMenuItem mntmPaste = new JMenuItem("Paste");
+		JMenuItem mntmPaste = new JMenuItem("Paste"); // Paste function
 		mnEdit.add(mntmPaste);
 		mntmPaste.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -181,10 +180,11 @@ public class FullMenu extends DateDemo {
 
 			}
 		});
-		JMenuItem mntmDelete = new JMenuItem("Delete");
+
+		JMenuItem mntmDelete = new JMenuItem("Delete"); // Delete function
 		mnEdit.add(mntmDelete);
 		mntmPaste.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed (java.awt.event.ActionEvent evt) {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				mntmDelete(evt);
 				textArea.remove(textArea);
 			}
@@ -251,12 +251,12 @@ public class FullMenu extends DateDemo {
 
 	protected void mntmNew(ActionEvent evt) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	protected void mntmDelete(ActionEvent evt) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	protected void mntmCoppy(ActionEvent evt) {
