@@ -1,5 +1,6 @@
 
 import java.awt.BorderLayout;
+import java.awt.Checkbox;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -38,6 +39,7 @@ import javax.swing.JToggleButton;
 import javax.swing.JSpinner;
 import javax.swing.event.ChangeListener;
 import javax.swing.text.TextAction;
+import javax.xml.soap.Text;
 import javax.swing.event.ChangeEvent;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
@@ -213,6 +215,15 @@ public class FullMenu extends DateDemo {
 
 		JMenuItem mntmWordWrap = new JMenuItem("Word Wrap");
 		mnFormat.add(mntmWordWrap);
+		mntmWordWrap.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed (java.awt.event.ActionEvent evt) {
+				mntmWordWrap(evt);
+				mnFormat.add(checkBox);
+				if (checkBox != null) {
+					setWrapStyleWord(textArea);
+				}
+			};
+		});
 
 		JMenu mnHelp = new JMenu("Help");
 		mnHelp.setFont(new Font("SansSerif", Font.PLAIN, 15));
@@ -249,18 +260,27 @@ public class FullMenu extends DateDemo {
 		// }
 	}
 
+	protected void setWrapStyleWord(JTextArea textArea) {
+		
+		
+	}
+
+	protected void mntmWordWrap(ActionEvent evt) {
+		
+		
+	}
+
 	protected void mntmNew(ActionEvent evt) {
-		// TODO Auto-generated method stub
+		
 
 	}
 
 	protected void mntmDelete(ActionEvent evt) {
-		// TODO Auto-generated method stub
-
+		
 	}
 
 	protected void mntmCoppy(ActionEvent evt) {
-		// TODO Auto-generated method stub
+		
 
 	}
 }
