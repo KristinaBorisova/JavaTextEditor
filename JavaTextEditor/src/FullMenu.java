@@ -52,6 +52,7 @@ import java.awt.SystemColor;
 
 public class FullMenu extends DateDemo {
 
+	protected static final JTextArea ActionEvent = null;
 	private static JMenuBar MenuBar;
 	private static JMenu FileMenu;
 	private JMenuItem mntmNew;
@@ -109,11 +110,11 @@ public class FullMenu extends DateDemo {
 		JMenuBar menuBar = new JMenuBar();
 		frame.setJMenuBar(menuBar);
 
-		// private void widgetsAdd() {
-		// JScrollPane scrollPane = new JScrollPane(textArea);
-		// getContentPane().add(scrollPane, BorderLayout.CENTER);
-		// this.setJMenuBar(menuBar);
-		// }
+//		 private void widgetsAdd() {
+//		 JScrollPane scrollPane = new JScrollPane(textArea);
+//		 getContentPane().add(scrollPane, BorderLayout.CENTER);
+//		 this.setJMenuBar(menuBar);
+//		 }
 		// ----------------------------------------------------//
 		JMenu mnFile = new JMenu("File");// File menu
 		mnFile.setFont(new Font("SansSerif", Font.PLAIN, 15));
@@ -208,6 +209,53 @@ public class FullMenu extends DateDemo {
 
 		JMenuItem mntmMostCommonWord = new JMenuItem("Most common word");
 		mnEdit.add(mntmMostCommonWord);
+		mntmMostCommonWord.addActionListener(new java.awt.event.ActionListener() {
+			public void ActionPerformed (JTextArea evt){
+				mntmMostCommonWord(evt);
+			}
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				protected String mntmMostCommonWord(JTextArea textArea) {
+					
+						int max = 0; //
+						String word = "";
+
+						for (String s : wordsMap.keySet()) {
+
+							if (wordsMap.get(s) > max) {
+								max = wordsMap.get(s); //max gets number of repeating of most common word in text area
+								word = s;
+							}
+						}
+						return word;
+				}
+				JOptionPane.showMessageDialog(mntmMostCommonWord,"Most common word in text is:", mntmMostCommonWord(textArea)); // if "OK" ----> Close
+			}
+
+				
+	});
+		
+		
+		
+		
+//		public static String getMostCommonWord() {
+//
+//			int max = 0;
+//			String word = "";
+//
+//			for (String s : wordsMap.keySet()) {
+//
+//				if (wordsMap.get(s) > max) {
+//					max = wordsMap.get(s); //max gets number of 
+//					word = s;
+//				}
+//			}
+//
+//			System.out.printf("Most common word in text is: %s - (%d times).\n", word, max);
+//			return word;
+//		}
 		// ----------------------------------------------------//
 		JMenu mnFormat = new JMenu("Front"); // Front menu
 		mnFormat.setFont(new Font("SansSerif", Font.PLAIN, 15));
@@ -260,6 +308,19 @@ public class FullMenu extends DateDemo {
 		// }
 	}
 
+		
+		
+
+	protected void mntmCoppy(java.awt.event.ActionEvent evt) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private int getDefaultCloseOperation() {
+		
+		return 0;
+	}
+
 	protected void setWrapStyleWord(JTextArea textArea) {
 		
 		
@@ -279,11 +340,7 @@ public class FullMenu extends DateDemo {
 		
 	}
 
-	protected void mntmCoppy(ActionEvent evt) {
-		
-
-	}
-}
+		}
 
 
 
