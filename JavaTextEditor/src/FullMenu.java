@@ -130,7 +130,6 @@ public class FullMenu extends DateDemo {
 		//
 		JMenuItem mntmOpen = new JMenuItem("Open"); // Open
 		mnFile.add(mntmOpen);
-	
 
 		JMenuItem mntmSave = new JMenuItem("Save");
 		mnFile.add(mntmSave);
@@ -150,33 +149,33 @@ public class FullMenu extends DateDemo {
 		JMenuItem mntmCoppy = new JMenuItem("Coppy");
 		mnEdit.add(mntmCoppy);
 		mntmCoppy.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mntmCoppy(evt);
-                textArea.copy();
-            }
-        });
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				mntmCoppy(evt);
+				textArea.copy();
+			}
+		});
 
 		JMenuItem mntmCut = new JMenuItem("Cut");
 		mnEdit.add(mntmCut);
 		mntmCut.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
-			textArea.cut();
-		}
-	});
+				textArea.cut();
+			}
+		});
 
 		JMenuItem mntmPaste = new JMenuItem("Paste");
 		mnEdit.add(mntmPaste);
 		mntmPaste.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mntmPaste(evt);
-                textArea.paste();
-            }
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				mntmPaste(evt);
+				textArea.paste();
+			}
 
 			private void mntmPaste(ActionEvent evt) {
 				// TODO Auto-generated method stub
-				
+
 			}
-        });
+		});
 		JMenuItem mntmDelete = new JMenuItem("Delete");
 		mnEdit.add(mntmDelete);
 
@@ -223,31 +222,27 @@ public class FullMenu extends DateDemo {
 			}
 		});
 
-	
-
 		JMenuItem mntmDate = new JMenuItem("Date");
 		mntmTime = new JMenuItem("Date");
 		mnHelp.add(mntmTime);
-//		mntmTime.addActionListener(new ActionListener () {
-//				public void actionPerformed(ActionEvent actionEvent) {
-//
-//		Date dNow = new Date(0);// Instantiate a Date object
-//		SimpleDateFormat ft = new SimpleDateFormat("E yyyy.MM.dd 'Time:' hh:mm:ss a zzz");// display time and date using toString()
-////		System.out.println("Current Date: " + ft.format(dNow));
-//		JOptionPane.showMessageDialog(mntmDate, "Current Date: " + ft.format(dNow)); 
-//	}
-//		}
+		// mntmTime.addActionListener(new ActionListener () {
+		// public void actionPerformed(ActionEvent actionEvent) {
+		//
+		// Date dNow = new Date(0);// Instantiate a Date object
+		// SimpleDateFormat ft = new SimpleDateFormat("E yyyy.MM.dd 'Time:'
+		// hh:mm:ss a zzz");// display time and date using toString()
+		//// System.out.println("Current Date: " + ft.format(dNow));
+		// JOptionPane.showMessageDialog(mntmDate, "Current Date: " +
+		// ft.format(dNow));
+		// }
+		// }
 	}
 
 	protected void mntmCoppy(ActionEvent evt) {
 		// TODO Auto-generated method stub
-		
+
 	}
 }
-
-
-
-	
 
 
 
