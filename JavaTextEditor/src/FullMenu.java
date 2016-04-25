@@ -149,13 +149,34 @@ public class FullMenu extends DateDemo {
 		// add(textArea);
 		JMenuItem mntmCoppy = new JMenuItem("Coppy");
 		mnEdit.add(mntmCoppy);
+		mntmCoppy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mntmCoppy(evt);
+                textArea.copy();
+            }
+        });
 
 		JMenuItem mntmCut = new JMenuItem("Cut");
 		mnEdit.add(mntmCut);
+		mntmCut.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+			textArea.cut();
+		}
+	});
 
 		JMenuItem mntmPaste = new JMenuItem("Paste");
 		mnEdit.add(mntmPaste);
+		mntmPaste.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mntmPaste(evt);
+                textArea.paste();
+            }
 
+			private void mntmPaste(ActionEvent evt) {
+				// TODO Auto-generated method stub
+				
+			}
+        });
 		JMenuItem mntmDelete = new JMenuItem("Delete");
 		mnEdit.add(mntmDelete);
 
@@ -216,6 +237,11 @@ public class FullMenu extends DateDemo {
 //		JOptionPane.showMessageDialog(mntmDate, "Current Date: " + ft.format(dNow)); 
 //	}
 //		}
+	}
+
+	protected void mntmCoppy(ActionEvent evt) {
+		// TODO Auto-generated method stub
+		
 	}
 }
 
