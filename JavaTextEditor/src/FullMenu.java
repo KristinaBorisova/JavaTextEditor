@@ -105,37 +105,32 @@ public class FullMenu extends DateDemo {
 
 		JMenuBar menuBar = new JMenuBar();
 		frame.setJMenuBar(menuBar);
-	
-//		private void widgetsAdd() {
-//			JScrollPane scrollPane = new JScrollPane(textArea);
-//			getContentPane().add(scrollPane, BorderLayout.CENTER);
-//			this.setJMenuBar(menuBar);
-//		}
+
+		// private void widgetsAdd() {
+		// JScrollPane scrollPane = new JScrollPane(textArea);
+		// getContentPane().add(scrollPane, BorderLayout.CENTER);
+		// this.setJMenuBar(menuBar);
+		// }
 		// ----------------------------------------------------//
 		JMenu mnFile = new JMenu("File");// File menu
 		mnFile.setFont(new Font("SansSerif", Font.PLAIN, 15));
 		menuBar.add(mnFile);
 
-		
 		JMenuItem mntmNew = new JMenuItem("New");
 		mntmNew.setBackground(SystemColor.control);
 		mnFile.add(mntmNew);
-		
-//	private void actionListeners(){
-//		mntmNew.add.ActionListener(new Actionlistener() {
-//		public void actionPerformed(ActionEvent actionEvent) {
-//			TextAction.setText("");
-//		}
-//	}
-//		
-		JMenuItem mntmOpen = new JMenuItem("Open"); //Open 
-		
-		
-		
-		
+
+		// private void actionListeners(){
+		// mntmNew.add.ActionListener(new Actionlistener() {
+		// public void actionPerformed(ActionEvent actionEvent) {
+		// TextAction.setText("");
+		// }
+		// }
+		//
+		JMenuItem mntmOpen = new JMenuItem("Open"); // Open
+
 		mnFile.add(mntmOpen);
 
-		
 		JMenuItem mntmSave = new JMenuItem("Save");
 		mnFile.add(mntmSave);
 
@@ -194,35 +189,27 @@ public class FullMenu extends DateDemo {
 		JMenuItem mntmAbout = new JMenuItem("About..");
 		mntmAbout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent actionEvent) {
-				JOptionPane.showMessageDialog(mntmAbout, "Created by Kristina and Venetsia","Java Text Editor",
+				JOptionPane.showMessageDialog(mntmAbout, "Created by Kristina and Venetsia", "Java Text Editor",
 						getDefaultCloseOperation()); // if "OK" ----> Close
 			}
 
-			private int getDefaultCloseOperation() { // Close operation int method
+			private int getDefaultCloseOperation() { // Close operation int
+														// method
 				// TODO Auto-generated method stub
 				return 0;
 			}
 		});
-		
 
 		mnHelp.add(mntmAbout);
 
-	//	JMenuItem mntmDate = new JMenuItem("Date");
-//		mntmTime = new JMenuItem("Date");
-//		 {
-//			Date dNow = new Date();// Instantiate a Date object
-//			SimpleDateFormat ft = new SimpleDateFormat("E yyyy.MM.dd 'Time:' hh:mm:ss a zzz");// display time and date using toString()
-//
-//			System.out.println("Current Date: " + ft.format(dNow));
-//		}
-//		mnHelp.add(mntmTime);
-//	
-//
-//	}
+		JMenuItem mntmDate = new JMenuItem("Date");
+		mntmTime = new JMenuItem("Date");
 
-	
+		mnHelp.add(mntmTime);
 
 	}
 
-	}
+}
+
+
 
