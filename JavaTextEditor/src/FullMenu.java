@@ -1,4 +1,4 @@
-
+import java.util.HashMap;
 import java.awt.BorderLayout;
 import java.awt.Checkbox;
 import java.awt.Dimension;
@@ -110,11 +110,6 @@ public class FullMenu extends DateDemo {
 		JMenuBar menuBar = new JMenuBar();
 		frame.setJMenuBar(menuBar);
 
-//		 private void widgetsAdd() {
-//		 JScrollPane scrollPane = new JScrollPane(textArea);
-//		 getContentPane().add(scrollPane, BorderLayout.CENTER);
-//		 this.setJMenuBar(menuBar);
-//		 }
 		// ----------------------------------------------------//
 		JMenu mnFile = new JMenu("File");// File menu
 		mnFile.setFont(new Font("SansSerif", Font.PLAIN, 15));
@@ -129,15 +124,28 @@ public class FullMenu extends DateDemo {
 				textArea.setText(""); // New file function
 			}
 		});
-		// private void actionListeners(){
-		// mntmNew.add.ActionListener(new Actionlistener() {
-		// public void actionPerformed(ActionEvent actionEvent) {
-		// TextAction.setText("");
-		// }
-		// }
-		//
+
 		JMenuItem mntmOpen = new JMenuItem("Open"); // Open
 		mnFile.add(mntmOpen);
+		mntmOpen.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent actionEvent) {
+				JFileChooser open = new JFileChooser();
+				int option = open.showOpenDialog(null);
+				if (option == JFileChooser.APPROVE_OPTION) {
+					textArea.setText("");
+					try {
+						Scanner scan = new Scanner(new FileReader(open.getSelectedFile().getPath()));
+						FullMenu.this.setTitle(open.getSelectedFile().getName());
+						while (scan.hasNext()) {
+							textArea.append(scan.nextLine());
+						}
+					} catch (FileNotFoundException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+		});
 
 		JMenuItem mntmSave = new JMenuItem("Save");
 		mnFile.add(mntmSave);
@@ -209,53 +217,35 @@ public class FullMenu extends DateDemo {
 
 		JMenuItem mntmMostCommonWord = new JMenuItem("Most common word");
 		mnEdit.add(mntmMostCommonWord);
-		mntmMostCommonWord.addActionListener(new java.awt.event.ActionListener() {
-			public void ActionPerformed (JTextArea evt){
-				mntmMostCommonWord(evt);
-			}
+		// mntmMostCommonWord.addActionListener(new
+		// java.awt.event.ActionListener() {
+		// public void ActionPerformed (JTextArea evt){
+		// mostCommonWord(evt);
+		// @Override
+		// public void actionPerformed(java.awt.event.ActionEvent e) {
+		// protected String mostCommonWord(JTextArea textArea) {
+		//
+		// int max = 0; //
+		// String word = "";
+		//
+		// for (String s : wordsMap.keySet()) {
+		//
+		// if (wordsMap.get(s) > max) {
+		// max = wordsMap.get(s); //max gets number of repeating of most common
+		// word in text area
+		// word = s;
+		// }
+		// }
+		// return word;
+		// }
+		// JOptionPane.showMessageDialog(mntmMostCommonWord,"Most common word in
+		// text is:", mostCommonWord(textArea));
+		// return word;// if "OK" ----> Close
+		// }
+		//
+		//
+		// });
 
-			@Override
-			public void actionPerformed(ActionEvent e) {
-
-				protected String mntmMostCommonWord(JTextArea textArea) {
-					
-						int max = 0; //
-						String word = "";
-
-						for (String s : wordsMap.keySet()) {
-
-							if (wordsMap.get(s) > max) {
-								max = wordsMap.get(s); //max gets number of repeating of most common word in text area
-								word = s;
-							}
-						}
-						return word;
-				}
-				JOptionPane.showMessageDialog(mntmMostCommonWord,"Most common word in text is:", mntmMostCommonWord(textArea)); // if "OK" ----> Close
-			}
-
-				
-	});
-		
-		
-		
-		
-//		public static String getMostCommonWord() {
-//
-//			int max = 0;
-//			String word = "";
-//
-//			for (String s : wordsMap.keySet()) {
-//
-//				if (wordsMap.get(s) > max) {
-//					max = wordsMap.get(s); //max gets number of 
-//					word = s;
-//				}
-//			}
-//
-//			System.out.printf("Most common word in text is: %s - (%d times).\n", word, max);
-//			return word;
-//		}
 		// ----------------------------------------------------//
 		JMenu mnFormat = new JMenu("Front"); // Front menu
 		mnFormat.setFont(new Font("SansSerif", Font.PLAIN, 15));
@@ -264,7 +254,7 @@ public class FullMenu extends DateDemo {
 		JMenuItem mntmWordWrap = new JMenuItem("Word Wrap");
 		mnFormat.add(mntmWordWrap);
 		mntmWordWrap.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed (java.awt.event.ActionEvent evt) {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				mntmWordWrap(evt);
 				mnFormat.add(checkBox);
 				if (checkBox != null) {
@@ -287,7 +277,7 @@ public class FullMenu extends DateDemo {
 
 			private int getDefaultCloseOperation() { // Close operation int
 														// method
-				// TODO Auto-generated method stub
+
 				return 0;
 			}
 		});
@@ -308,39 +298,38 @@ public class FullMenu extends DateDemo {
 		// }
 	}
 
-		
-		
+	protected void setTitle(String name) {
+		// TODO Auto-generated method stub
+
+	}
 
 	protected void mntmCoppy(java.awt.event.ActionEvent evt) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	private int getDefaultCloseOperation() {
-		
+
 		return 0;
 	}
 
 	protected void setWrapStyleWord(JTextArea textArea) {
-		
-		
+
 	}
 
 	protected void mntmWordWrap(ActionEvent evt) {
-		
-		
+
 	}
 
 	protected void mntmNew(ActionEvent evt) {
-		
 
 	}
 
 	protected void mntmDelete(ActionEvent evt) {
-		
+
 	}
 
-		}
+}
 
 
 
