@@ -9,6 +9,7 @@ import java.awt.event.WindowEvent;
 import java.awt.font.GlyphMetrics;
 import java.awt.font.GlyphVector;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -128,8 +129,8 @@ public class FullMenu extends DateDemo {
 		// }
 		//
 		JMenuItem mntmOpen = new JMenuItem("Open"); // Open
-
 		mnFile.add(mntmOpen);
+	
 
 		JMenuItem mntmSave = new JMenuItem("Save");
 		mnFile.add(mntmSave);
@@ -187,6 +188,7 @@ public class FullMenu extends DateDemo {
 		menuBar.add(mnHelp);
 
 		JMenuItem mntmAbout = new JMenuItem("About..");
+		mnHelp.add(mntmAbout);
 		mntmAbout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent actionEvent) {
 				JOptionPane.showMessageDialog(mntmAbout, "Created by Kristina and Venetsia", "Java Text Editor",
@@ -200,16 +202,28 @@ public class FullMenu extends DateDemo {
 			}
 		});
 
-		mnHelp.add(mntmAbout);
+	
 
 		JMenuItem mntmDate = new JMenuItem("Date");
 		mntmTime = new JMenuItem("Date");
-
 		mnHelp.add(mntmTime);
-
+//		mntmTime.addActionListener(new ActionListener () {
+//				public void actionPerformed(ActionEvent actionEvent) {
+//
+//		Date dNow = new Date(0);// Instantiate a Date object
+//		SimpleDateFormat ft = new SimpleDateFormat("E yyyy.MM.dd 'Time:' hh:mm:ss a zzz");// display time and date using toString()
+////		System.out.println("Current Date: " + ft.format(dNow));
+//		JOptionPane.showMessageDialog(mntmDate, "Current Date: " + ft.format(dNow)); 
+//	}
+//		}
 	}
-
 }
+
+
+
+	
+
+
 
 
 
