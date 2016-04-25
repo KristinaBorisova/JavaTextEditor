@@ -120,7 +120,12 @@ public class FullMenu extends DateDemo {
 		JMenuItem mntmNew = new JMenuItem("New");
 		mntmNew.setBackground(SystemColor.control);
 		mnFile.add(mntmNew);
-
+        mntmNew.addActionListener(new java.awt.event.ActionListener() {
+        	public void actionPerformed (java.awt.event.ActionEvent evt) {
+        		mntmNew(evt);
+        		textArea.setText(""); //New file function
+        	}
+        });
 		// private void actionListeners(){
 		// mntmNew.add.ActionListener(new Actionlistener() {
 		// public void actionPerformed(ActionEvent actionEvent) {
@@ -178,6 +183,12 @@ public class FullMenu extends DateDemo {
 		});
 		JMenuItem mntmDelete = new JMenuItem("Delete");
 		mnEdit.add(mntmDelete);
+		mntmPaste.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed (java.awt.event.ActionEvent evt) {
+				mntmDelete(evt);
+				textArea.remove(textArea);
+			}
+		});
 
 		JMenuItem mntmFind = new JMenuItem("Find...");
 		mnEdit.add(mntmFind);
@@ -236,6 +247,16 @@ public class FullMenu extends DateDemo {
 		// ft.format(dNow));
 		// }
 		// }
+	}
+
+	protected void mntmNew(ActionEvent evt) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	protected void mntmDelete(ActionEvent evt) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	protected void mntmCoppy(ActionEvent evt) {
