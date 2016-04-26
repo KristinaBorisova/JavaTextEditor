@@ -296,6 +296,23 @@ public class FullMenu extends DateDemo {
 		// ft.format(dNow));
 		// }
 		// }
+		mntmTime = new JMenuItem("Date");
+		mnHelp.add(mntmTime);
+		mntmTime.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent actionEvent) {
+
+				Date dNow = new Date();// Instantiate a Date object
+				SimpleDateFormat ft = new SimpleDateFormat("E yyyy.MM.dd 'Time:'hh:mm:ss a zzz"); // display
+																									// time
+																									// and
+																									// date
+																									// using
+																									// toString()
+				System.out.println("Current Date: " + ft.format(dNow));
+				JOptionPane.showMessageDialog(mntmDate, "Current Date: " + ft.format(dNow));
+			}
+		});
+	}
 	}
 
 	protected void setTitle(String name) {
