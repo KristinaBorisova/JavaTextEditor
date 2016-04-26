@@ -147,8 +147,31 @@ public class FullMenu extends DateDemo {
 			}
 		});
 
-		JMenuItem mntmSave = new JMenuItem("Save");
-		mnFile.add(mntmSave);
+		// JMenuItem mntmSave = new JMenuItem("Save");
+		// mnFile.add(mntmSave);
+		// mntmSave.addActionListener(new awt.java.event.ActionListener() {
+		// 	private void ActionPerformed(ActionEvent actionEvent) {
+		// 	 mntmSave = new JFileChooser();
+		// 		 mntmSave.addChoosableFileFilter(new  DateDemo());
+		// 		int option = mntmSave.showSaveDialog(null);
+		// 		if(option == JFileChooser.APPROVE_OPTION) {
+		// 			String ext = "";
+		// 			String Extenstion = mntmSave.getFileFilter().getDescription();
+		// 			if (Extenstion.equals("*.txt")) {
+		// 				ext = ".txt";
+		// 			}
+		// 			try {
+		// 				BufferedWriter writer = new BufferedWriter (
+		// 						new FileWriter (mnrmSave.getSelectedFile().getPath + ext));
+		// 				writer.write(textArea.getText());
+		// 				writer.close();
+		// 			  mntmSave == true;
+		// 				FullMenu.this.setTitle(mntmSave.getSelectedFile().getName());
+		// 			 catch (Exception exception) {
+		// 				System.out.println(exception.getMessage());
+		// 			}
+					
+		// 		}
 
 		JMenuItem mntmSaveAs = new JMenuItem("Save as...");
 		mnFile.add(mntmSaveAs);
