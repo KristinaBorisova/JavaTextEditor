@@ -155,7 +155,15 @@ public class FullMenu extends DateDemo {
 
 		JMenuItem mntmExit = new JMenuItem("Exit");
 		mnFile.add(mntmExit);
-
+	        mntmExit.addActionListener(new java.awt.event.ActionListener() {
+			private void showSaveDialog() {
+				int choice = JOptionPane.showConfirmDialog(null,
+						"Exit without saving?", "Save before Quitting",
+						JOptionPane.YES_NO_OPTION);
+				if (choice == 0) {
+					System.exit(0);
+				}
+			}
 		// ----------------------------------------------------//
 		JMenu mnEdit = new JMenu("Edit"); // Edit menu
 		mnEdit.setFont(new Font("SansSerif", Font.PLAIN, 15));
